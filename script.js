@@ -64,7 +64,7 @@ var TextInputFormFunctions = {
     $('#' + inputValue).css({
 
       'display': 'inline-block',
-      'margin': '1em'
+      'padding': '10px'
     });
 
     $('#text-input-button').removeAttr('disabled');
