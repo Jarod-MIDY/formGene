@@ -59,7 +59,7 @@ var TextInputFormFunctions = {
       return;
     }
 
-    $('#gauche').append('<input id="' + inputValue + '" type="text">');
+    $('#gauche').append('<input id="' + inputValue + '" type="text"><br>');
 
     $('#' + inputValue).css({
 
@@ -87,7 +87,7 @@ var droite_lot = $('<div id="droite_div"><label>Texte du bouton </label><input t
 	$("#droite_bot").on( "click", function(){
 	 	var gauche_bot_value = $("#nom").val();
 		var gauche_bot = $('<button id="gauche_bot" >' + gauche_bot_value + '</button>');
-		
+
 		$( "#gauche" ).append( gauche_bot );
 
 		$("#gauche_bot").css({
