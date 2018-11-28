@@ -10,7 +10,7 @@ function okLabel() {
   if (valLab) {
     $('#gauche').append('<span class="label-span">' + valLab + ' </span>');
   }
-  $('.label-span').css({"padding":"10px","font-size":"1.5em","display":"inline-block"});
+  $('.label-span').css({"padding":"1em","display":"inline-block"});
   $('#add-label').remove();
   $('#label-btn').prop('disabled', false);
 }
@@ -64,7 +64,7 @@ var TextInputFormFunctions = {
     $('#' + inputValue).css({
 
       'display': 'inline-block',
-      'padding': '10px'
+      'margin': '1em'
     });
 
     $('#text-input-button').removeAttr('disabled');
