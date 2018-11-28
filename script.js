@@ -15,63 +15,75 @@ function okLabel() {
   $('#label-btn').prop('disabled', false);
 }
 
-// JCH input button form
+// JCH input text form
+// $('#text-input-button').on('click', function() {
+//
+//   var textInputForm = $('<form id="text-input-form"></form>');
+//
+//   textInputForm.append($('<label>id de la zone texte</label>'));
+//   textInputForm.append($('<input type="text">'));
+//   textInputForm.append($('<button>ok</button>'));
+//
+//   $('#droite').append(textInputForm);
+//
+//   textInputForm.css({ 'margin-top': '2em', 'padding': '1em', 'border-top': '2px solid black' });
+//
+//   $('#text-input-form *').css({ 'margin': '0.25em' });
+//
+//   $(this).attr('disabled', 'true');
+//
+//   $('#text-input-form input').focus();
+//
+//   $('#text-input-form button').on('click', TextInputFormFunctions.addTextInput);
+// });
+//
+// var TextInputFormFunctions = {
+//
+//   addTextInput: function(e) {
+//
+//     e.preventDefault();
+//
+//     var inputValue = $('#text-input-form input').val();
+//
+//     if(!inputValue) {
+//
+//       alert('Please, input a value for the text input id');
+//
+//       $('#text-input-form input').focus();
+//
+//       return;
+//     }
+//
+//     $('#gauche').append('<input id="' + inputValue + '" type="text">');
+//
+//     $('#' + inputValue).after('<br>');
+//
+//     $('#' + inputValue).css({ 'display': 'inline-block', 'margin': '1em' });
+//
+//     $('#text-input-button').removeAttr('disabled');
+//
+//     $('#text-input-form').remove();
+//   }
+// };
+
+// JCH input text form (spaghetti mode)
 $('#text-input-button').on('click', function() {
-
-  var textInputForm = $('<form id="text-input-form"></form>');
-
-  textInputForm.append($('<label>id de la zone texte</label>'));
-  textInputForm.append($('<input type="text">'));
-  textInputForm.append($('<button>ok</button>'));
-
-  $('#droite').append(textInputForm);
-
-  textInputForm.css({
-
-    'margin-top': '2em',
-    'padding': '1em',
-    'border-top': '2px solid black'
-  });
-
+  $('#droite').append($('<form id="text-input-form"></form>').append($('<label>id de la zone texte</label>')).append($('<input type="text">')).append($('<button>ok</button>')).css({ 'margin-top': '2em', 'padding': '1em', 'border-top': '2px solid black' }));
   $('#text-input-form *').css({ 'margin': '0.25em' });
-
   $(this).attr('disabled', 'true');
-
   $('#text-input-form input').focus();
-
-  $('#text-input-form button').on('click', TextInputFormFunctions.addTextInput);
+  $('#text-input-form button').on('click', function(e) {
+    e.preventDefault();
+    var inputValue = $('#text-input-form input').val();
+    if(inputValue) {
+      $('#gauche').append('<input id="' + inputValue + '" type="text"><br>');
+      $('#' + inputValue).css({ 'display': 'inline-block', 'margin': '1em' });
+    }
+    $('#text-input-button').removeAttr('disabled');
+    $('#text-input-form').remove();
+  });
 });
 
-var TextInputFormFunctions = {
-
-  addTextInput: function(e) {
-
-    e.preventDefault();
-
-    var inputValue = $('#text-input-form input').val();
-
-    if(!inputValue) {
-
-      alert('Please, input a value for the text input id');
-
-      $('#text-input-form input').focus();
-
-      return;
-    }
-
-    $('#gauche').append('<input id="' + inputValue + '" type="text"><br>');
-
-    $('#' + inputValue).css({
-
-      'display': 'inline-block',
-      'margin': '1em'
-    });
-
-    $('#text-input-button').removeAttr('disabled');
-
-    $('#text-input-form').remove();
-  }
-};
 
 //Yanek
 
