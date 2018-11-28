@@ -10,7 +10,7 @@ function okLabel() {
   if (valLab) {
     $('#gauche').append('<span class="label-span">' + valLab + ' </span>');
   }
-  $('.label-span').css({"padding":"1em","display":"inline-block"});
+  $('.label-span').css({"margin":"1em","display":"inline-block"});
   $('#add-label').remove();
   $('#label-btn').prop('disabled', false);
 }
