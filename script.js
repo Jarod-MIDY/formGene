@@ -6,7 +6,9 @@ function boutonLabel() {
 }
 function okLabel() {
   let valLab = $('#label-val').val();
-  $('#gauche').append('<span>' + valLab + ' </span>');
+  if (valLab) {
+    $('#gauche').append('<span>' + valLab + ' </span>');
+  }
   $('#add-label').remove();
   $('#label-btn').prop('disabled', false);
 }
