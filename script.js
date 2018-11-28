@@ -72,3 +72,33 @@ var TextInputFormFunctions = {
     $('#text-input-form').remove();
   }
 };
+
+//Yanek
+
+$("#bot_001").on( "click", function(){
+var droite_lot = $('<div id="droite_div"><label>Texte du bouton </label><input type="text" id="nom" value=""> <button id="droite_bot">ok</button>');
+
+	$("#bot_001").attr({"disabled":"disabled"})
+	$( "#droite" ).append( droite_lot );
+
+	$("#droite_div").css({
+        "margin": "15px"
+    });
+	$("#droite_bot").on( "click", function(){
+	 	var gauche_bot_value = $("#nom").val();
+		var gauche_bot = $('<button id="gauche_bot" >' + gauche_bot_value + '</button>');
+		
+		$( "#gauche" ).append( gauche_bot );
+
+		$("#gauche_bot").css({
+        	"margin": "15px",
+        	"display": "inline-block"
+    	});
+
+		$( "#droite_div" ).remove();
+
+		$("#bot_001").removeAttr("disabled");
+	});
+
+});
+//Yanek end
